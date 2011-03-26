@@ -1,0 +1,17 @@
+name: Vendor\CookBundle\Toaster
+comment: Takes a donnut and returns it toasted
+extends: Vendor\MachineBundle\Electrical
+implements: [ Vendor\CookBundle\ToasterInterface ]
+properties:
+    duration:
+        type: int
+        visibility: private
+        comment: Toasting duration in seconds
+        default: 20
+        getter: true
+        setter: true
+        construct: true
+    timer:
+        type: Vendor\MachineBundle\Timer
+        comment: Timer used to measure the toasting duration
+        construct: true
