@@ -1,10 +1,10 @@
 Disclaimer: this bundle is about typing less. Your keyboard will thank you.
 
-## Asumptions
+## Assumptions
 
-1. Symfony2 is about glorification of Object Oriented Programming.
-A popular pattern is called [Single responsibility](http://en.wikipedia.org/wiki/Single_responsibility_principle).
-It states that each class should have only one purpose.
+1. Symfony2 is the glorification of Object Oriented Programming.
+A popular pattern, called [Single responsibility](http://en.wikipedia.org/wiki/Single_responsibility_principle),
+states that each class should have only one purpose.
 
 2. It also means that for every single purpose you must write a new class.
 
@@ -14,6 +14,34 @@ It states that each class should have only one purpose.
 Oh, all these things have phpDoc and comments.
 
 5. You are lazy and your fingers are tired.
+
+## Installation
+
+### Add TyperBundle to your src/ dir
+
+    $ git submodule add git://github.com/ornicar/TyperBundle.git src/FOQ/TyperBundle
+
+### Add the FOQ namespace to your autoloader
+
+    // app/autoload.php
+
+    $loader->registerNamespaces(array(
+        'FOQ' => __DIR__.'/../src',
+        // your other namespaces
+    );
+
+### Add TyperBundle to your application kernel
+
+    // app/AppKernel.php
+
+    public function registerBundles()
+    {
+        return array(
+            // ...
+            new FOQ\TyperBundle\FOQTyperBundle(),
+            // ...
+        );
+    }
 
 ## Code generation
 
