@@ -1,7 +1,7 @@
 name: Vendor\CookBundle\Toaster
 comment: Takes a donnut and returns it toasted
 extends: Vendor\MachineBundle\Electrical
-implements: [ Vendor\CookBundle\ToasterInterface ]
+implements: [ Vendor\CookBundle\ToasterInterface, ArrayAccess ]
 properties:
     duration:
         type: int

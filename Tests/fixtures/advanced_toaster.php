@@ -3,12 +3,13 @@
 namespace Vendor\CookBundle;
 
 use Vendor\MachineBundle\Electrical;
+use ArrayAccess;
 use Vendor\MachineBundle\Timer;
 
 /**
  * Takes a donnut and returns it toasted
  */
-class Toaster extends Electrical implements ToasterInterface
+class Toaster extends Electrical implements ToasterInterface, ArrayAccess
 {
 
     /**
