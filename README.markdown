@@ -84,7 +84,7 @@ Example of more complete template:
     name: Vendor\CookBundle\Toaster
     comment: Takes a donnut and returns it toasted
     extends: Vendor\MachineBundle\Electrical
-    implements: [ Vendor\CookBundle\ToasterInterface, Pluggable ]
+    implements: [ Vendor\CookBundle\ToasterInterface, ArrayAccess ]
     properties:
         duration:
             type: int
