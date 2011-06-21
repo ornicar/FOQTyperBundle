@@ -4,7 +4,7 @@ namespace FOQ\TyperBundle\Command;
 
 use Symfony\Component\Console\Input;
 
-use Symfony\Bundle\FrameworkBundle\Command\Command;
+use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputInterface;
@@ -14,7 +14,7 @@ use Symfony\Component\Console\Output\Output;
 /**
  * Generate a class template
  */
-class TemplateCommand extends Command
+class TemplateCommand extends ContainerAwareCommand
 {
     /**
      * @see Command

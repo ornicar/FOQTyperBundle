@@ -4,7 +4,7 @@ namespace FOQ\TyperBundle\Command;
 
 use Symfony\Component\Console\Input;
 
-use Symfony\Bundle\FrameworkBundle\Command\Command;
+use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputInterface;
@@ -16,7 +16,7 @@ use InvalidArgumentException;
 /**
  * Generate a class or interface
  */
-class GenerateCommand extends Command
+class GenerateCommand extends ContainerAwareCommand
 {
     /**
      * @see Command
@@ -40,7 +40,7 @@ class GenerateCommand extends Command
         if (!file_exists($configFile)) {
             throw new InvalidArgumentException('Invalid config file specified');
         }
-        $generator = $this->container->get('foq_typer.generator');
+        $generator = $this->getContainer()->get('foq_typer.generator');
         $generator->generateFile($configFile);
     }
 }
